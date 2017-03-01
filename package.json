@@ -1,0 +1,32 @@
+{
+  "name": "jquery-module-tab",
+  "version": "0.1.0",
+  "description": "A flexible jQuery module tab with sass customization.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "typi": "^2.3.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "stylelint-config-standard": "^16.0.0"
+  },
+  "scripts": {
+    "demo": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobDesideri/jquery-module-tab.git"
+  },
+  "keywords": [
+    "webcomponent",
+    "jquery-plugin",
+    "module-tab"
+  ],
+  "author": "Roberto Desideri",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RobDesideri/jquery-module-tab/issues"
+  },
+  "homepage": "https://github.com/RobDesideri/jquery-module-tab#readme"
+}

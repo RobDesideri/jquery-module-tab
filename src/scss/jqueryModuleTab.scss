@@ -1,0 +1,238 @@
+@import "../../node_modules/typi/scss/typi";
+
+//colors
+$label_item_color: #999;
+$label_item_bg_color: #dedede;
+$label_item_border: solid #900 1px;
+$label_item_active_bg_color: #fff;
+$label_item_active_color: #dc5147;
+$content_border: solid #900 1px;
+$content_min_height: 10em;
+$content_bg_color: #f5f1ee;
+$thumb_width_perc: 35;
+$text_bg_color: #ccc;
+$text_font_family: 'Arial';
+$text_padding: 5%;
+$text_i_color: #d89024;
+$text_i_style: italic;
+$text_b_color: #d89024;
+$text_b_style: bold;
+$text_em_color: #d89024;
+$text_em_style: italic;
+$text_strong_color: #d89024;
+$text_strong_style: bold;
+$text_a_color: blue;
+$text_a_decoration: underline;
+$color_celeste_approx: #ccc;
+$module_border_style: none;
+$module_border_color: #000;
+$module_border_width: 0;
+
+// Typi configuration
+$breakpoints: (
+  xsmall: 320px,
+  small: 800px,
+  large: 1200px
+);
+
+$typi: (
+  null: 16px,
+  xsmall: 12px,
+  small: 18px,
+  large: 20px
+);
+
+//fonts
+$font_0: 'Helvetica';
+$font_1: 'Arial';
+$font_2: 'sans-serif';
+
+//@extend-elements
+//original selectors
+//.tab >.tab-legend, .tab >.tab-content, .tab-legend >li, .tab-content >li
+%extend_1 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@function perctodecimal($perc_no_unit) {
+  @return $perc_no_unit / 100;
+}
+
+.unselectable {
+  user-select: none;
+}
+
+.module-tab {
+  @include typi-base();
+  width: 100%;
+  margin: 2em 0;
+  padding: 0 1em;
+  overflow: hidden;
+  border-style: $module_border_style;
+  border-color: $module_border_color;
+  border-width: $module_border_width;
+
+  > div {
+    > .legend {
+      @extend %extend_1;
+      font-family: $font_0, $font_1, $font_2;
+      overflow: hidden;
+      text-align: center;
+
+      > li {
+        @extend %extend_1;
+        @extend .unselectable;
+        padding: 13px 15px 15px;
+        margin-top: 5px;
+        color: $label_item_color;
+        text-transform: uppercase;
+        float: left;
+        cursor: pointer;
+        background-color: $label_item_bg_color;
+        border: $label_item_border;
+      }
+
+      > .active {
+        margin-top: 0;
+        padding: 15px 15px 18px;
+        background-color: $label_item_active_bg_color;
+        color: $label_item_active_color;
+      }
+    }
+  }
+
+  > .content {
+    @extend %extend_1;
+    width: 100%;
+    min-height: $content_min_height;
+    position: relative;
+    overflow: hidden;
+    border: $content_border;
+    margin-top: (0 - nth($label_item_border, 3));
+    background-color: $content_bg_color;
+
+    > li {
+      @extend %extend_1;
+      position: relative;
+      overflow: hidden;
+
+      > .thumb {
+        margin: 2%;
+        float: left;
+        width: percentage(perctodecimal($thumb_width_perc - 4));
+
+        > img {
+          width: 100%;
+          height: auto;
+          padding: 14% 14% 12%;
+        }
+      }
+
+      > .text {
+        margin: 2%;
+        float: right;
+        width: percentage(perctodecimal((100 - $thumb_width_perc - 5)));
+        background-color: $text_bg_color;
+        font-family: $text_font_family;
+        padding: $text_padding;
+
+        i {
+          color: $text_i_color;
+          font-style: $text_i_style;
+        }
+
+        b {
+          color: $text_b_color;
+          font-style: $text_b_style;
+        }
+
+        em {
+          color: $text_em_color;
+          font-style: $text_em_style;
+        }
+
+        strong {
+          color: $text_strong_color;
+          font-style: $text_strong_style;
+        }
+
+        a {
+          color: $text_a_color;
+          text-decoration: $text_a_decoration;
+        }
+      }
+    }
+  }
+
+  // Variant: horizontal version
+  &.-horiz {
+    > .legend {
+      width: 100%;
+
+      > li {
+        border-top: solid 1px $color_celeste_approx;
+        border-right: solid 1px $color_celeste_approx;
+        border-bottom: solid 1px $color_celeste_approx;
+
+        &:first-child {
+          border-left: solid 1px $color_celeste_approx;
+        }
+
+        &.active {
+          border-top: solid 4px $label_item_active_color;
+          border-bottom: 0;
+        }
+      }
+    }
+
+    > .content {
+      width: 100%;
+    }
+  }
+}
+
+@media all and (max-width: map-get($breakpoints, small)) {
+  .module-tab > div > .legend {
+    width: 20%;
+    float: left;
+
+    > li {
+      width: 100% !important;
+      border-top: solid 1px $color_celeste_approx;
+      border-right: solid 1px $color_celeste_approx;
+      //writing-mode: tb-rl;
+
+      &.active {
+        border-right: 0;
+        border-left: solid 3px $label_item_active_color;
+      }
+    }
+  }
+
+  .module-tab > .content {
+    width: 80%;
+    display: block;
+    float: left;
+
+    > li {
+      min-height: 100%;
+      display: block;
+      border-top: $content_border;
+
+      > .thumb {
+        height: auto !important;
+        margin: 0 auto;
+        float: none;
+        width: 100%;
+      }
+
+      > .text {
+        height: auto !important;
+        float: none;
+        width: 100%;
+      }
+    }
+  }
+}
