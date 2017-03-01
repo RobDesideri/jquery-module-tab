@@ -1,6 +1,6 @@
 @import "../../bower_components/typi/scss/typi";
 
-//colors
+$main_font_size: 14px;
 $label_item_color: #999;
 $label_item_bg_color: #dedede;
 $label_item_border: solid #900 1px;
@@ -65,7 +65,7 @@ $font_2: 'sans-serif';
 }
 
 .module-tab {
-  @include typi-base();
+  font-size: $main_font_size;
   width: 100%;
   margin: 2em 0;
   padding: 0 1em;
@@ -75,6 +75,7 @@ $font_2: 'sans-serif';
   border-width: $module_border_width;
 
   > div {
+    @include typi-base();
     > .legend {
       @extend %extend_1;
       font-family: $font_0, $font_1, $font_2;
@@ -103,92 +104,69 @@ $font_2: 'sans-serif';
     }
   }
 
-  > .content {
-    @extend %extend_1;
-    width: 100%;
-    min-height: $content_min_height;
-    position: relative;
-    overflow: hidden;
-    border: $content_border;
-    margin-top: (0 - nth($label_item_border, 3));
-    background-color: $content_bg_color;
-
-    > li {
+  > div >  {
+    @include typi-base();
+    .content {
       @extend %extend_1;
+      width: 100%;
+      min-height: $content_min_height;
       position: relative;
       overflow: hidden;
-
-      > .thumb {
-        margin: 2%;
-        float: left;
-        width: percentage(perctodecimal($thumb_width_perc - 4));
-
-        > img {
-          width: 100%;
-          height: auto;
-          padding: 14% 14% 12%;
-        }
-      }
-
-      > .text {
-        margin: 2%;
-        float: right;
-        width: percentage(perctodecimal((100 - $thumb_width_perc - 5)));
-        background-color: $text_bg_color;
-        font-family: $text_font_family;
-        padding: $text_padding;
-
-        i {
-          color: $text_i_color;
-          font-style: $text_i_style;
-        }
-
-        b {
-          color: $text_b_color;
-          font-style: $text_b_style;
-        }
-
-        em {
-          color: $text_em_color;
-          font-style: $text_em_style;
-        }
-
-        strong {
-          color: $text_strong_color;
-          font-style: $text_strong_style;
-        }
-
-        a {
-          color: $text_a_color;
-          text-decoration: $text_a_decoration;
-        }
-      }
-    }
-  }
-
-  // Variant: horizontal version
-  &.-horiz {
-    > .legend {
-      width: 100%;
+      border: $content_border;
+      margin-top: (0 - nth($label_item_border, 3));
+      background-color: $content_bg_color;
 
       > li {
-        border-top: solid 1px $color_celeste_approx;
-        border-right: solid 1px $color_celeste_approx;
-        border-bottom: solid 1px $color_celeste_approx;
+        @extend %extend_1;
+        position: relative;
+        overflow: hidden;
 
-        &:first-child {
-          border-left: solid 1px $color_celeste_approx;
+        > .thumb {
+          margin: 2%;
+          float: left;
+          width: percentage(perctodecimal($thumb_width_perc - 4));
+
+          > img {
+            width: 100%;
+            height: auto;
+            padding: 14% 14% 12%;
+          }
         }
 
-        &.active {
-          border-top: solid 4px $label_item_active_color;
-          border-bottom: 0;
+        > .text {
+          margin: 2%;
+          float: right;
+          width: percentage(perctodecimal((100 - $thumb_width_perc - 5)));
+          background-color: $text_bg_color;
+          font-family: $text_font_family;
+          padding: $text_padding;
+
+          i {
+            color: $text_i_color;
+            font-style: $text_i_style;
+          }
+
+          b {
+            color: $text_b_color;
+            font-style: $text_b_style;
+          }
+
+          em {
+            color: $text_em_color;
+            font-style: $text_em_style;
+          }
+
+          strong {
+            color: $text_strong_color;
+            font-style: $text_strong_style;
+          }
+
+          a {
+            color: $text_a_color;
+            text-decoration: $text_a_decoration;
+          }
         }
       }
-    }
-
-    > .content {
-      width: 100%;
     }
   }
 }
@@ -211,7 +189,7 @@ $font_2: 'sans-serif';
     }
   }
 
-  .module-tab > .content {
+  .module-tab > div > .content {
     width: 80%;
     display: block;
     float: left;

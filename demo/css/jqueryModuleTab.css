@@ -1,4 +1,4 @@
-.module-tab > div > .legend, .module-tab > div > .legend > li, .module-tab > .content, .module-tab > .content > li {
+.module-tab > div > .legend, .module-tab > div > .legend > li, .module-tab > div > .content, .module-tab > div > .content > li {
   margin: 0;
   padding: 0;
   list-style: none; }
@@ -7,7 +7,7 @@
   user-select: none; }
 
 .module-tab {
-  font-size: 100%;
+  font-size: 14px;
   width: 100%;
   margin: 2em 0;
   padding: 0 1em;
@@ -15,87 +15,87 @@
   border-style: none;
   border-color: #000;
   border-width: 0; }
-  @media all and (min-width: 320px) {
-    .module-tab {
-      font-size: 75%; } }
-  @media all and (min-width: 800px) {
-    .module-tab {
-      font-size: 112.5%; } }
-  @media all and (min-width: 1200px) {
-    .module-tab {
-      font-size: 125%; } }
-  .module-tab > div > .legend {
-    font-family: "Helvetica", "Arial", "sans-serif";
-    overflow: hidden;
-    text-align: center; }
-    .module-tab > div > .legend > li {
-      padding: 13px 15px 15px;
-      margin-top: 5px;
-      color: #999;
-      text-transform: uppercase;
-      float: left;
-      cursor: pointer;
-      background-color: #dedede;
-      border: solid #900 1px; }
-    .module-tab > div > .legend > .active {
-      margin-top: 0;
-      padding: 15px 15px 18px;
-      background-color: #fff;
-      color: #dc5147; }
-  .module-tab > .content {
-    width: 100%;
-    min-height: 10em;
-    position: relative;
-    overflow: hidden;
-    border: solid #900 1px;
-    margin-top: -1px;
-    background-color: #f5f1ee; }
-    .module-tab > .content > li {
-      position: relative;
-      overflow: hidden; }
-      .module-tab > .content > li > .thumb {
-        margin: 2%;
+  .module-tab > div {
+    font-size: 100%; }
+    @media all and (min-width: 320px) {
+      .module-tab > div {
+        font-size: 75%; } }
+    @media all and (min-width: 800px) {
+      .module-tab > div {
+        font-size: 112.5%; } }
+    @media all and (min-width: 1200px) {
+      .module-tab > div {
+        font-size: 125%; } }
+    .module-tab > div > .legend {
+      font-family: "Helvetica", "Arial", "sans-serif";
+      overflow: hidden;
+      text-align: center; }
+      .module-tab > div > .legend > li {
+        padding: 13px 15px 15px;
+        margin-top: 5px;
+        color: #999;
+        text-transform: uppercase;
         float: left;
-        width: 31%; }
-        .module-tab > .content > li > .thumb > img {
-          width: 100%;
-          height: auto;
-          padding: 14% 14% 12%; }
-      .module-tab > .content > li > .text {
-        margin: 2%;
-        float: right;
-        width: 60%;
-        background-color: #ccc;
-        font-family: "Arial";
-        padding: 5%; }
-        .module-tab > .content > li > .text i {
-          color: #d89024;
-          font-style: italic; }
-        .module-tab > .content > li > .text b {
-          color: #d89024;
-          font-style: bold; }
-        .module-tab > .content > li > .text em {
-          color: #d89024;
-          font-style: italic; }
-        .module-tab > .content > li > .text strong {
-          color: #d89024;
-          font-style: bold; }
-        .module-tab > .content > li > .text a {
-          color: blue;
-          text-decoration: underline; }
-  .module-tab.-horiz > .legend {
-    width: 100%; }
-    .module-tab.-horiz > .legend > li {
-      border-top: solid 1px #ccc;
-      border-right: solid 1px #ccc;
-      border-bottom: solid 1px #ccc; }
-      .module-tab.-horiz > .legend > li:first-child {
-        border-left: solid 1px #ccc; }
-      .module-tab.-horiz > .legend > li.active {
-        border-top: solid 4px #dc5147;
-        border-bottom: 0; }
-  .module-tab.-horiz > .content {
-    width: 100%; }
+        cursor: pointer;
+        background-color: #dedede;
+        border: solid #900 1px; }
+      .module-tab > div > .legend > .active {
+        margin-top: 0;
+        padding: 15px 15px 18px;
+        background-color: #fff;
+        color: #dc5147; }
+  .module-tab > div > {
+    font-size: 100%; }
+    @media all and (min-width: 320px) {
+      .module-tab > div > {
+        font-size: 75%; } }
+    @media all and (min-width: 800px) {
+      .module-tab > div > {
+        font-size: 112.5%; } }
+    @media all and (min-width: 1200px) {
+      .module-tab > div > {
+        font-size: 125%; } }
+    .module-tab > div > .content {
+      width: 100%;
+      min-height: 10em;
+      position: relative;
+      overflow: hidden;
+      border: solid #900 1px;
+      margin-top: -1px;
+      background-color: #f5f1ee; }
+      .module-tab > div > .content > li {
+        position: relative;
+        overflow: hidden; }
+        .module-tab > div > .content > li > .thumb {
+          margin: 2%;
+          float: left;
+          width: 31%; }
+          .module-tab > div > .content > li > .thumb > img {
+            width: 100%;
+            height: auto;
+            padding: 14% 14% 12%; }
+        .module-tab > div > .content > li > .text {
+          margin: 2%;
+          float: right;
+          width: 60%;
+          background-color: #ccc;
+          font-family: "Arial";
+          padding: 5%; }
+          .module-tab > div > .content > li > .text i {
+            color: #d89024;
+            font-style: italic; }
+          .module-tab > div > .content > li > .text b {
+            color: #d89024;
+            font-style: bold; }
+          .module-tab > div > .content > li > .text em {
+            color: #d89024;
+            font-style: italic; }
+          .module-tab > div > .content > li > .text strong {
+            color: #d89024;
+            font-style: bold; }
+          .module-tab > div > .content > li > .text a {
+            color: blue;
+            text-decoration: underline; }
 
 @media all and (max-width: 800px) {
   .module-tab > div > .legend {
@@ -108,20 +108,20 @@
       .module-tab > div > .legend > li.active {
         border-right: 0;
         border-left: solid 3px #dc5147; }
-  .module-tab > .content {
+  .module-tab > div > .content {
     width: 80%;
     display: block;
     float: left; }
-    .module-tab > .content > li {
+    .module-tab > div > .content > li {
       min-height: 100%;
       display: block;
       border-top: solid #900 1px; }
-      .module-tab > .content > li > .thumb {
+      .module-tab > div > .content > li > .thumb {
         height: auto !important;
         margin: 0 auto;
         float: none;
         width: 100%; }
-      .module-tab > .content > li > .text {
+      .module-tab > div > .content > li > .text {
         height: auto !important;
         float: none;
         width: 100%; } }
