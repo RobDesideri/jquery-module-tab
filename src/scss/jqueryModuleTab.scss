@@ -1,51 +1,51 @@
 @import "../../bower_components/typi/scss/typi";
 
-$main_font_size: 14px;
-$label_item_color: #999;
-$label_item_bg_color: #dedede;
-$label_item_border: solid #900 1px;
-$label_item_active_bg_color: #fff;
-$label_item_active_color: #dc5147;
-$content_border: solid #900 1px;
-$content_min_height: 10em;
-$content_bg_color: #f5f1ee;
-$thumb_width_perc: 35;
-$text_bg_color: #ccc;
-$text_font_family: 'Arial';
-$text_padding: 5%;
-$text_i_color: #d89024;
-$text_i_style: italic;
-$text_b_color: #d89024;
-$text_b_style: bold;
-$text_em_color: #d89024;
-$text_em_style: italic;
-$text_strong_color: #d89024;
-$text_strong_style: bold;
-$text_a_color: blue;
-$text_a_decoration: underline;
-$color_celeste_approx: #ccc;
-$module_border_style: none;
-$module_border_color: #000;
-$module_border_width: 0;
+$main_font_size: 14px !default;
+$label_item_color: #999 !default;
+$label_item_bg_color: #dedede !default;
+$label_item_border: solid #900 1px !default;
+$label_item_active_bg_color: #fff !default;
+$label_item_active_color: #dc5147 !default;
+$content_border: solid #900 1px !default;
+$content_min_height: 10em !default;
+$content_bg_color: #f5f1ee !default;
+$thumb_width_perc: 35 !default;
+$text_bg_color: #ccc !default;
+$text_font_family: 'Arial' !default;
+$text_padding: 5% !default;
+$text_i_color: #d89024 !default;
+$text_i_style: italic !default;
+$text_b_color: #d89024 !default;
+$text_b_style: bold !default;
+$text_em_color: #d89024 !default;
+$text_em_style: italic !default;
+$text_strong_color: #d89024 !default;
+$text_strong_style: bold !default;
+$text_a_color: blue !default;
+$text_a_decoration: underline !default;
+$color_celeste_approx: #ccc !default;
+$module_border_style: none !default;
+$module_border_color: #000 !default;
+$module_border_width: 0 !default;
 
 // Typi configuration
 $breakpoints: (
   xsmall: 320px,
   small: 800px,
   large: 1200px
-);
+) !default;
 
 $typi: (
   null: 16px,
   xsmall: 12px,
   small: 18px,
   large: 20px
-);
+) !default;
 
 //fonts
-$font_0: 'Helvetica';
-$font_1: 'Arial';
-$font_2: 'sans-serif';
+$font_0: 'Helvetica' !default;
+$font_1: 'Arial' !default;
+$font_2: 'sans-serif' !default;
 
 //@extend-elements
 //original selectors
