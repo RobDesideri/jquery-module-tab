@@ -1,0 +1,29 @@
+{
+  "name": "jquery-module-tab",
+  "description": "A flexible jQuery module tab with sass customization.",
+  "main": [
+    "src/js/jqueryModuleTab.js",
+    "src/scss/jqueryModuleTab.scss"
+  ],
+  "authors": [
+    "Roberto Desideri"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "webcomponent",
+    "jquery-plugin",
+    "module-tab"
+  ],
+  "homepage": "https://github.com/RobDesideri/jquery-module-tab",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "typi": "^2.3.0"
+  }
+}
