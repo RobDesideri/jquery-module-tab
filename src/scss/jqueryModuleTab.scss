@@ -1,130 +1,116 @@
-@import "../../bower_components/typi/scss/typi";
-
-$main_font_size: 14px !default;
-$label_item_color: #999 !default;
-$label_item_bg_color: #dedede !default;
-$label_item_border: solid #900 1px !default;
-$label_item_active_bg_color: #fff !default;
-$label_item_active_color: #dc5147 !default;
-$content_border: solid #900 1px !default;
-$content_min_height: 10em !default;
-$content_bg_color: #f5f1ee !default;
-$thumb_width_perc: 35 !default;
-$text_bg_color: #ccc !default;
-$text_font_family: 'Arial' !default;
-$text_padding: 5% !default;
-$text_i_color: #d89024 !default;
-$text_i_style: italic !default;
-$text_b_color: #d89024 !default;
-$text_b_style: bold !default;
-$text_em_color: #d89024 !default;
-$text_em_style: italic !default;
-$text_strong_color: #d89024 !default;
-$text_strong_style: bold !default;
-$text_a_color: blue !default;
-$text_a_decoration: underline !default;
-$color_celeste_approx: #ccc !default;
-$module_border_style: none !default;
-$module_border_color: #000 !default;
-$module_border_width: 0 !default;
-
-// Typi configuration
-$breakpoints: (
+// Public variables
+$jmt_main_font_size: 14px !default;
+$jmt_label_item_color: #999 !default;
+$jmt_label_item_bg_color: #dedede !default;
+$jmt_label_item_border: solid #900 1px !default;
+$jmt_label_item_active_bg_color: #fff !default;
+$jmt_label_item_active_color: #dc5147 !default;
+$jmt_content_border: solid #900 1px !default;
+$jmt_content_min_height: 10em !default;
+$jmt_content_bg_color: #f5f1ee !default;
+$jmt_thumb_width_perc: 35 !default;
+$jmt_text_bg_color: #ccc !default;
+$jmt_text_font_family: 'Arial' !default;
+$jmt_text_padding: 5% !default;
+$jmt_text_i_color: #d89024 !default;
+$jmt_text_i_style: italic !default;
+$jmt_text_b_color: #d89024 !default;
+$jmt_text_b_style: bold !default;
+$jmt_text_em_color: #d89024 !default;
+$jmt_text_em_style: italic !default;
+$jmt_text_strong_color: #d89024 !default;
+$jmt_text_strong_style: bold !default;
+$jmt_text_a_color: blue !default;
+$jmt_text_a_decoration: underline !default;
+$jmt_color_celeste_approx: #ccc !default;
+$jmt_module_border_style: none !default;
+$jmt_module_border_color: #000 !default;
+$jmt_module_border_width: 0 !default;
+$jmt_breakpoints: (
   xsmall: 320px,
   small: 800px,
   large: 1200px
 ) !default;
+$jmt_legend_font_list: 'Helvetica, Arial, sans-serif' !default;
+$jmt_content_font_list: 'Helvetica, Arial, sans-serif' !default;
 
-$typi: (
-  null: 16px,
-  xsmall: 12px,
-  small: 18px,
-  large: 20px
-) !default;
-
-//fonts
-$font_0: 'Helvetica' !default;
-$font_1: 'Arial' !default;
-$font_2: 'sans-serif' !default;
-
-//@extend-elements
-//original selectors
-//.tab >.tab-legend, .tab >.tab-content, .tab-legend >li, .tab-content >li
-%extend_1 {
+// Private extend
+%_jmt_extend {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-@function perctodecimal($perc_no_unit) {
-  @return $perc_no_unit / 100;
-}
+// Private function
 
-.unselectable {
-  user-select: none;
+@function _jmt_func_perctodecimal($jmt_perc_no_unit) {
+  @return $jmt_perc_no_unit / 100;
 }
 
 .module-tab {
-  font-size: $main_font_size;
+  font-size: $jmt_main_font_size;
   width: 100%;
   margin: 2em 0;
   padding: 0 1em;
   overflow: hidden;
-  border-style: $module_border_style;
-  border-color: $module_border_color;
-  border-width: $module_border_width;
+  border-style: $jmt_module_border_style;
+  border-color: $jmt_module_border_color;
+  border-width: $jmt_module_border_width;
 
   > div {
-    @include typi-base();
     > .legend {
-      @extend %extend_1;
-      font-family: $font_0, $font_1, $font_2;
+      @extend %_jmt_extend;
+
+      font-family: $jmt_legend_font_list;
       overflow: hidden;
       text-align: center;
 
       > li {
-        @extend %extend_1;
-        @extend .unselectable;
+        @extend %_jmt_extend;
+
+        user-select: none;
         padding: 13px 15px 15px;
         margin-top: 5px;
-        color: $label_item_color;
+        color: $jmt_label_item_color;
         text-transform: uppercase;
         float: left;
         cursor: pointer;
-        background-color: $label_item_bg_color;
-        border: $label_item_border;
+        background-color: $jmt_label_item_bg_color;
+        border: $jmt_label_item_border;
       }
 
       > .active {
         margin-top: 0;
         padding: 15px 15px 18px;
-        background-color: $label_item_active_bg_color;
-        color: $label_item_active_color;
+        background-color: $jmt_label_item_active_bg_color;
+        color: $jmt_label_item_active_color;
       }
     }
   }
 
-  > div >  {
-    @include typi-base();
+  > div > {
     .content {
-      @extend %extend_1;
+      @extend %_jmt_extend;
+
+      font-family: $jmt_content_font_list;
       width: 100%;
-      min-height: $content_min_height;
+      min-height: $jmt_content_min_height;
       position: relative;
       overflow: hidden;
-      border: $content_border;
-      margin-top: (0 - nth($label_item_border, 3));
-      background-color: $content_bg_color;
+      border: $jmt_content_border;
+      margin-top: (0 - nth($jmt_label_item_border, 3));
+      background-color: $jmt_content_bg_color;
 
       > li {
-        @extend %extend_1;
+        @extend %_jmt_extend;
+
         position: relative;
         overflow: hidden;
 
         > .thumb {
           margin: 2%;
           float: left;
-          width: percentage(perctodecimal($thumb_width_perc - 4));
+          width: percentage(_jmt_func_perctodecimal($jmt_thumb_width_perc - 4));
 
           > img {
             width: 100%;
@@ -136,34 +122,34 @@ $font_2: 'sans-serif' !default;
         > .text {
           margin: 2%;
           float: right;
-          width: percentage(perctodecimal((100 - $thumb_width_perc - 5)));
-          background-color: $text_bg_color;
-          font-family: $text_font_family;
-          padding: $text_padding;
+          width: percentage(_jmt_func_perctodecimal((100 - $jmt_thumb_width_perc - 5)));
+          background-color: $jmt_text_bg_color;
+          font-family: $jmt_text_font_family;
+          padding: $jmt_text_padding;
 
           i {
-            color: $text_i_color;
-            font-style: $text_i_style;
+            color: $jmt_text_i_color;
+            font-style: $jmt_text_i_style;
           }
 
           b {
-            color: $text_b_color;
-            font-style: $text_b_style;
+            color: $jmt_text_b_color;
+            font-style: $jmt_text_b_style;
           }
 
           em {
-            color: $text_em_color;
-            font-style: $text_em_style;
+            color: $jmt_text_em_color;
+            font-style: $jmt_text_em_style;
           }
 
           strong {
-            color: $text_strong_color;
-            font-style: $text_strong_style;
+            color: $jmt_text_strong_color;
+            font-style: $jmt_text_strong_style;
           }
 
           a {
-            color: $text_a_color;
-            text-decoration: $text_a_decoration;
+            color: $jmt_text_a_color;
+            text-decoration: $jmt_text_a_decoration;
           }
         }
       }
@@ -171,20 +157,20 @@ $font_2: 'sans-serif' !default;
   }
 }
 
-@media all and (max-width: map-get($breakpoints, small)) {
+@media all and (max-width: map-get($jmt_breakpoints, small)) {
   .module-tab > div > .legend {
     width: 20%;
     float: left;
 
     > li {
       width: 100% !important;
-      border-top: solid 1px $color_celeste_approx;
-      border-right: solid 1px $color_celeste_approx;
+      border-top: solid 1px $jmt_color_celeste_approx;
+      border-right: solid 1px $jmt_color_celeste_approx;
       //writing-mode: tb-rl;
 
       &.active {
         border-right: 0;
-        border-left: solid 3px $label_item_active_color;
+        border-left: solid 3px $jmt_label_item_active_color;
       }
     }
   }
@@ -197,7 +183,7 @@ $font_2: 'sans-serif' !default;
     > li {
       min-height: 100%;
       display: block;
-      border-top: $content_border;
+      border-top: $jmt_content_border;
 
       > .thumb {
         height: auto !important;
