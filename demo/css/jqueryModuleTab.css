@@ -3,9 +3,6 @@
   padding: 0;
   list-style: none; }
 
-.unselectable, .module-tab > div > .legend > li {
-  user-select: none; }
-
 .module-tab {
   font-size: 14px;
   width: 100%;
@@ -15,87 +12,67 @@
   border-style: none;
   border-color: #000;
   border-width: 0; }
-  .module-tab > div {
-    font-size: 100%; }
-    @media all and (min-width: 320px) {
-      .module-tab > div {
-        font-size: 75%; } }
-    @media all and (min-width: 800px) {
-      .module-tab > div {
-        font-size: 112.5%; } }
-    @media all and (min-width: 1200px) {
-      .module-tab > div {
-        font-size: 125%; } }
-    .module-tab > div > .legend {
-      font-family: "Helvetica", "Arial", "sans-serif";
-      overflow: hidden;
-      text-align: center; }
-      .module-tab > div > .legend > li {
-        padding: 13px 15px 15px;
-        margin-top: 5px;
-        color: #999;
-        text-transform: uppercase;
-        float: left;
-        cursor: pointer;
-        background-color: #dedede;
-        border: solid #900 1px; }
-      .module-tab > div > .legend > .active {
-        margin-top: 0;
-        padding: 15px 15px 18px;
-        background-color: #fff;
-        color: #dc5147; }
-  .module-tab > div > {
-    font-size: 100%; }
-    @media all and (min-width: 320px) {
-      .module-tab > div > {
-        font-size: 75%; } }
-    @media all and (min-width: 800px) {
-      .module-tab > div > {
-        font-size: 112.5%; } }
-    @media all and (min-width: 1200px) {
-      .module-tab > div > {
-        font-size: 125%; } }
-    .module-tab > div > .content {
-      width: 100%;
-      min-height: 10em;
+  .module-tab > div > .legend {
+    font-family: "Helvetica, Arial, sans-serif";
+    overflow: hidden;
+    text-align: center; }
+    .module-tab > div > .legend > li {
+      user-select: none;
+      padding: 13px 15px 15px;
+      margin-top: 5px;
+      color: #999;
+      text-transform: uppercase;
+      float: left;
+      cursor: pointer;
+      background-color: #dedede;
+      border: solid #900 1px; }
+    .module-tab > div > .legend > .active {
+      margin-top: 0;
+      padding: 15px 15px 18px;
+      background-color: #fff;
+      color: #dc5147; }
+  .module-tab > div > .content {
+    font-family: "Helvetica, Arial, sans-serif";
+    width: 100%;
+    min-height: 10em;
+    position: relative;
+    overflow: hidden;
+    border: solid #900 1px;
+    margin-top: -1px;
+    background-color: #f5f1ee; }
+    .module-tab > div > .content > li {
       position: relative;
-      overflow: hidden;
-      border: solid #900 1px;
-      margin-top: -1px;
-      background-color: #f5f1ee; }
-      .module-tab > div > .content > li {
-        position: relative;
-        overflow: hidden; }
-        .module-tab > div > .content > li > .thumb {
-          margin: 2%;
-          float: left;
-          width: 31%; }
-          .module-tab > div > .content > li > .thumb > img {
-            width: 100%;
-            height: auto;
-            padding: 14% 14% 12%; }
-        .module-tab > div > .content > li > .text {
-          margin: 2%;
-          float: right;
-          width: 60%;
-          background-color: #ccc;
-          font-family: "Arial";
-          padding: 5%; }
-          .module-tab > div > .content > li > .text i {
-            color: #d89024;
-            font-style: italic; }
-          .module-tab > div > .content > li > .text b {
-            color: #d89024;
-            font-style: bold; }
-          .module-tab > div > .content > li > .text em {
-            color: #d89024;
-            font-style: italic; }
-          .module-tab > div > .content > li > .text strong {
-            color: #d89024;
-            font-style: bold; }
-          .module-tab > div > .content > li > .text a {
-            color: blue;
-            text-decoration: underline; }
+      overflow: hidden; }
+      .module-tab > div > .content > li > .thumb {
+        margin: 2%;
+        float: left;
+        width: 31%; }
+        .module-tab > div > .content > li > .thumb > img {
+          width: 100%;
+          height: auto;
+          padding: 14% 14% 12%; }
+      .module-tab > div > .content > li > .text {
+        margin: 2%;
+        float: right;
+        width: 60%;
+        background-color: #ccc;
+        font-family: "Arial";
+        padding: 5%; }
+        .module-tab > div > .content > li > .text i {
+          color: #d89024;
+          font-style: italic; }
+        .module-tab > div > .content > li > .text b {
+          color: #d89024;
+          font-style: bold; }
+        .module-tab > div > .content > li > .text em {
+          color: #d89024;
+          font-style: italic; }
+        .module-tab > div > .content > li > .text strong {
+          color: #d89024;
+          font-style: bold; }
+        .module-tab > div > .content > li > .text a {
+          color: blue;
+          text-decoration: underline; }
 
 @media all and (max-width: 800px) {
   .module-tab > div > .legend {
