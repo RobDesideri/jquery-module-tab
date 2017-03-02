@@ -23,6 +23,5 @@
     "tests"
   ],
   "dependencies": {
-    "typi": "^2.3.0"
   }
 }
