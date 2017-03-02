@@ -73,32 +73,31 @@
         .module-tab > div > .content > li > .text a {
           color: blue;
           text-decoration: underline; }
-
-@media all and (max-width: 800px) {
-  .module-tab > div > .legend {
-    width: 20%;
-    float: left; }
-    .module-tab > div > .legend > li {
-      width: 100% !important;
-      border-top: solid 1px #ccc;
-      border-right: solid 1px #ccc; }
-      .module-tab > div > .legend > li.active {
-        border-right: 0;
-        border-left: solid 3px #dc5147; }
-  .module-tab > div > .content {
-    width: 80%;
-    display: block;
-    float: left; }
-    .module-tab > div > .content > li {
-      min-height: 100%;
+  @media all and (max-width: 800px) {
+    .module-tab > div > .legend {
+      width: 20%;
+      float: left; }
+      .module-tab > div > .legend > li {
+        width: 100% !important;
+        border-top: solid 1px #ccc;
+        border-right: solid 1px #ccc; }
+        .module-tab > div > .legend > li.active {
+          border-right: 0;
+          border-left: solid 3px #dc5147; }
+    .module-tab > div > .content {
+      width: 80%;
       display: block;
-      border-top: solid #900 1px; }
-      .module-tab > div > .content > li > .thumb {
-        height: auto !important;
-        margin: 0 auto;
-        float: none;
-        width: 100%; }
-      .module-tab > div > .content > li > .text {
-        height: auto !important;
-        float: none;
-        width: 100%; } }
+      float: left; }
+      .module-tab > div > .content > li {
+        min-height: 100%;
+        display: block;
+        border-top: solid #900 1px; }
+        .module-tab > div > .content > li > .thumb {
+          height: auto !important;
+          margin: 0 auto;
+          float: none;
+          width: 100%; }
+        .module-tab > div > .content > li > .text {
+          height: auto !important;
+          float: none;
+          width: 100%; } }

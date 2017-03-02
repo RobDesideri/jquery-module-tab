@@ -47,7 +47,7 @@ $jmt_content_font_list: 'Helvetica, Arial, sans-serif' !default;
   @return $jmt_perc_no_unit / 100;
 }
 
-.module-tab {
+@mixin build-jquery-module-tab-styles {
   font-size: $jmt_main_font_size;
   width: 100%;
   margin: 2em 0;
@@ -155,48 +155,52 @@ $jmt_content_font_list: 'Helvetica, Arial, sans-serif' !default;
       }
     }
   }
+
+  @media all and (max-width: map-get($jmt_breakpoints, small)) {
+    > div > .legend {
+      width: 20%;
+      float: left;
+
+      > li {
+        width: 100% !important;
+        border-top: solid 1px $jmt_color_celeste_approx;
+        border-right: solid 1px $jmt_color_celeste_approx;
+        //writing-mode: tb-rl;
+
+        &.active {
+          border-right: 0;
+          border-left: solid 3px $jmt_label_item_active_color;
+        }
+      }
+    }
+
+    > div > .content {
+      width: 80%;
+      display: block;
+      float: left;
+
+      > li {
+        min-height: 100%;
+        display: block;
+        border-top: $jmt_content_border;
+
+        > .thumb {
+          height: auto !important;
+          margin: 0 auto;
+          float: none;
+          width: 100%;
+        }
+
+        > .text {
+          height: auto !important;
+          float: none;
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 
-@media all and (max-width: map-get($jmt_breakpoints, small)) {
-  .module-tab > div > .legend {
-    width: 20%;
-    float: left;
-
-    > li {
-      width: 100% !important;
-      border-top: solid 1px $jmt_color_celeste_approx;
-      border-right: solid 1px $jmt_color_celeste_approx;
-      //writing-mode: tb-rl;
-
-      &.active {
-        border-right: 0;
-        border-left: solid 3px $jmt_label_item_active_color;
-      }
-    }
-  }
-
-  .module-tab > div > .content {
-    width: 80%;
-    display: block;
-    float: left;
-
-    > li {
-      min-height: 100%;
-      display: block;
-      border-top: $jmt_content_border;
-
-      > .thumb {
-        height: auto !important;
-        margin: 0 auto;
-        float: none;
-        width: 100%;
-      }
-
-      > .text {
-        height: auto !important;
-        float: none;
-        width: 100%;
-      }
-    }
-  }
+.module-tab {
+  @include build-jquery-module-tab-styles();
 }
