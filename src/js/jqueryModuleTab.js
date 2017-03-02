@@ -3,12 +3,9 @@
 (function ($, window) {
   'use-strict'
 
-  var elements = {}
-
   const LABEL_MARGIN = '5%'
 
   // View
-
   var constructTab = function (tabContainer) {
     var tabContentEl = $(tabContainer).find('.content li')
 
@@ -70,15 +67,15 @@
     $('.content li').eq(index).show().addClass('active')
   }
 
-  var unifyHeights = function () {
-    var maxHeight = $('.module-tab > .content').outerHeight()
+  var unifyHeights = function (tabContainer) {
+    var content = $(tabContainer).find('.content')
+    var maxHeight = content.outerHeight()
     var th
     var txt
 
-    th = $('.module-tab > .content > li > .thumb')
+    th = $(content).find('.thumb')
     if (th.outerHeight > maxHeight) { maxHeight = th.outerHeight() }
-
-    txt = $('.module-tab > .content > li > .text')
+    txt = $(content).find('.text')
     if (txt.outerHeight > maxHeight) { maxHeight = txt.outerHeight() }
 
     $.each(th, function () {
@@ -101,28 +98,19 @@
     })
   }
 
-  var init = function () {
-    console.log('Initiating Tab Module')
-    var self = this
-    var tabElement = $('.module-tab')
+  var init = function (mainClassName) {
+    var tabElement = $('.' + mainClassName)
 
     $.each(tabElement, function () {
       constructTab(this)
       tabController(this)
-      unifyHeights()
+      unifyHeights(this)
     })
-  }
-
-  var setheight = function () {
-    console.log('Initiating setheight Module')
-    var self = this
-    unifyHeights()
   }
 
   // public
   var jqueryModuleTab = {
-    init: init,
-    setheight: setheight
+    init: init
   }
 
   // transport
