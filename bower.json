@@ -2,8 +2,8 @@
   "name": "jquery-module-tab",
   "description": "A flexible jQuery module tab with sass customization.",
   "main": [
-    "dist/JqueryModuleTab.js",
-    "dist/JqueryModuleTab.scss"
+    "dist/jqueryModuleTab.js",
+    "dist/jqueryModuleTab.scss"
   ],
   "authors": [
     "Roberto Desideri"
