@@ -2,8 +2,34 @@ var sass = require('gulp-sass')
 var gulp = require('gulp')
 var umd = require('gulp-umd')
 
-gulp.task('js', function () {
-  gulp.src('src/js/**/*.js')
+gulp.task('demoJs', function () {
+  gulp.src('dist/JqueryModuleTab.js')
+  .pipe(gulp.dest('demo/js/'))
+})
+
+gulp.task('demoAssets', function () {
+  gulp.src('src/demo-assets/**/*')
+  .pipe(gulp.dest('demo/'))
+})
+
+gulp.task('demoHtml', function () {
+  gulp.src('src/index.html')
+  .pipe(gulp.dest('demo/'))
+})
+
+gulp.task('demoCss', function () {
+  gulp.src('dist/JqueryModuleTab.scss')
+  .pipe(sass())
+  .pipe(gulp.dest('demo/css/'))
+})
+
+gulp.task('distScss', function () {
+  gulp.src('src/scss/JqueryModuleTab.scss')
+  .pipe(gulp.dest('dist/'))
+})
+
+gulp.task('distJs', function () {
+  gulp.src('src/js/JqueryModuleTab.js')
   .pipe(umd({
     dependencies: function (file) {
       return [
@@ -17,23 +43,9 @@ gulp.task('js', function () {
       ]
     }
   }))
-  .pipe(gulp.dest('demo/js/'))
+  .pipe(gulp.dest('dist/'))
 })
 
-gulp.task('assets', function () {
-  gulp.src('src/demo-assets/**/*')
-  .pipe(gulp.dest('demo/'))
-})
+gulp.task('dist', ['distJs', 'distScss'])
+gulp.task('demo', ['demoJs', 'demoAssets', 'demoHtml', 'demoCss'])
 
-gulp.task('html', function () {
-  gulp.src('src/index.html')
-  .pipe(gulp.dest('demo/'))
-})
-
-gulp.task('sass', function () {
-  gulp.src('src/scss/**/*.scss')
-  .pipe(sass())
-  .pipe(gulp.dest('demo/css/'))
-})
-
-gulp.task('default', ['js', 'assets', 'sass', 'html'])
