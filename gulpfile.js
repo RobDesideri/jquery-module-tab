@@ -3,7 +3,7 @@ var gulp = require('gulp')
 var umd = require('gulp-umd')
 
 gulp.task('demoJs', function () {
-  gulp.src('dist/JqueryModuleTab.js')
+  gulp.src('dist/jqueryModuleTab.js')
   .pipe(gulp.dest('demo/js/'))
 })
 
@@ -18,18 +18,18 @@ gulp.task('demoHtml', function () {
 })
 
 gulp.task('demoCss', function () {
-  gulp.src('dist/JqueryModuleTab.scss')
+  gulp.src('dist/jqueryModuleTab.scss')
   .pipe(sass())
   .pipe(gulp.dest('demo/css/'))
 })
 
 gulp.task('distScss', function () {
-  gulp.src('src/scss/JqueryModuleTab.scss')
+  gulp.src('src/scss/jqueryModuleTab.scss')
   .pipe(gulp.dest('dist/'))
 })
 
 gulp.task('distJs', function () {
-  gulp.src('src/js/JqueryModuleTab.js')
+  gulp.src('src/js/jqueryModuleTab.js')
   .pipe(umd({
     dependencies: function (file) {
       return [
