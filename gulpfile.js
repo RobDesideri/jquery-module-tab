@@ -1,8 +1,22 @@
 var sass = require('gulp-sass')
 var gulp = require('gulp')
+var umd = require('gulp-umd')
 
 gulp.task('js', function () {
   gulp.src('src/js/**/*.js')
+  .pipe(umd({
+    dependencies: function (file) {
+      return [
+        {
+          name: 'jquery',
+          amd: 'jquery',
+          cjs: 'jquery',
+          global: 'jquery',
+          param: 'jquery'
+        }
+      ]
+    }
+  }))
   .pipe(gulp.dest('demo/js/'))
 })
 
