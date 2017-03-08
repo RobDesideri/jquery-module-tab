@@ -1,7 +1,5 @@
 // Tab Module
 
-'use-strict'
-
 var LABEL_MARGIN = '5%'
 
 // View
