@@ -2,7 +2,7 @@
 
 'use-strict'
 
-const LABEL_MARGIN = '5%'
+var LABEL_MARGIN = '5%'
 
 // View
 var constructTab = function (tabContainer) {
